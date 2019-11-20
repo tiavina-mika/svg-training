@@ -1,6 +1,6 @@
 import React from "react"
 import { render } from "react-dom"
-import Svg from './Rectangle'
+import Svg from './Visage'
 
 const App = () => {
   return (
