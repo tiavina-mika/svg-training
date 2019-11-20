@@ -1,10 +1,10 @@
 import React from "react"
 import { render } from "react-dom"
-import Circle from './Circle'
+import Svg from './Rectangle'
 
 const App = () => {
   return (
-    <Circle fill="red" width={300} height={300}/>
+    <Svg fill="red" width={400} height={400}/>
   )
 }
 

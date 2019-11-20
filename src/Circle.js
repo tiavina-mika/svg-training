@@ -1,6 +1,6 @@
 import React from "react";
 
-const CheckMark = props => {
+const Circle = props => {
   const { width, height, fill, className, style } = props;
   return (
     <svg height="400" width="400">
@@ -77,4 +77,4 @@ const CheckMark = props => {
   );
 };
 
-export default CheckMark;
+export default Circle;
