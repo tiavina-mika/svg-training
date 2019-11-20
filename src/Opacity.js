@@ -7,6 +7,7 @@ const useStyles = makeStyles(theme => ({
     fill: 'magenta',
     stroke: 'black',
     strokeWidth: 1,
+    strokeOpacity: 0.3,
     fillOpacity: 0.6,
   },
   circle2: {
@@ -24,7 +25,7 @@ const useStyles = makeStyles(theme => ({
   
 }))
 
-const Visage = props => {
+const Opacity = props => {
   const { width, height } = props;
   const classes = useStyles();
   return (
@@ -40,4 +41,4 @@ const Visage = props => {
   );
 };
 
-export default Visage;
+export default Opacity;

@@ -1,6 +1,6 @@
 import React from "react"
 import { render } from "react-dom"
-import Svg from './Op'
+import Svg from './Group'
 
 const App = () => {
   return (
