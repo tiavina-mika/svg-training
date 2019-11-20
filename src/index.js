@@ -4,7 +4,7 @@ import Svg from './Rectangle'
 
 const App = () => {
   return (
-    <Svg fill="red" width={400} height={400}/>
+    <Svg width={400} height={400}/>
   )
 }
 
