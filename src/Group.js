@@ -18,17 +18,17 @@ const Group = props => {
   return (
     <Box>
       <svg width="400" height="300">
-          <g id="monsapin">
+          <g id="fir">
             <rect x="45" y="70" className={classes.rect} width="10" height="20"/>
             <polygon className={classes.polygon} points="20,70 80,70 60,55 70,55 55,40 65,40 50,20 35,40 45,40 30,55 40,55"/>
           </g>
 
-          <use xlinkHref="#monsapin" transform="translate(100,100)"/>
-          <use xlinkHref="#monsapin" transform="translate(10,190)"/>
-          <use xlinkHref="#monsapin" transform="translate(300,-20)"/>
-          <use xlinkHref="#monsapin" transform="translate(320,200)"/>
-          <use xlinkHref="#monsapin" transform="translate(200,160)"/>
-          <use xlinkHref="#monsapin" transform="translate(170,30)"/>
+          <use xlinkHref="#fir" transform="translate(100,100) rotate(90)"/>
+          <use xlinkHref="#fir" transform="translate(10,190) skewX(-30)"/>
+          <use xlinkHref="#fir" transform="translate(300,-20)"/>
+          <use xlinkHref="#fir" transform="translate(320,200) skewY(10)"/>
+          <use xlinkHref="#fir" transform="translate(200,160)"/>
+          <use xlinkHref="#fir" transform="translate(170,30)"/>
       </svg>
     </Box>
   );
