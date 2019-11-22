@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
 
@@ -37,15 +37,20 @@ const Use = ({ id, x, y }) => (
 const Rectangle = ({ id, stops, gId, width, x, y }) => {
   if (typeof stops === "string") {
     return (
-      <rect
-        // x="0"
-        // y="0"
-        width={width}
-        height="50"
-        rx="10"
-        ry="10"
-        fill={stops}
-      />
+      <svg>
+          <defs>
+              <g id={gId}>
+                <rect
+                  width={width}
+                  height="50"
+                  rx="10"
+                  ry="10"
+                  fill={stops}
+                />
+              </g>
+          </defs>
+          <Use id={gId} y={y} x={x} />
+        </svg>
     );
   }
   return (
@@ -98,33 +103,28 @@ const LinearGradient = props => {
   const { width, height } = props;
   const classes = useStyles();
 
+  const data = [
+    {stops: rectBlue, gId: "blue", id: "blueId", width: 150, y: 55, x: 5},
+    {stops: rectViolet, gId: "violet", id: "violetId", width: 120, y: 555, x: 5},
+    {stops: "#fff", gId: "white", id: "whiteId", width: 80, y: 215, x: 5},
+  ]
+
   return (
-    <svg width={width || "500px"} height={height || "400px"}>
-      <Rectangle
-        stops={rectBlue}
-        gId="blue"
-        id="blueId"
-        width={200}
-        x={250}
-        y={150}
-      />
-      <Rectangle
-        stops={rectViolet}
-        gId="violet"
-        id="violetId"
-        width={200}
-        x={150}
-        y={50}
-      />
-      <Rectangle
-        stops="black"
-        gId="white"
-        id="whiteId"
-        width={120}
-        x={50}
-        y={50}
-      />
-    </svg>
+    <Box bgcolor="#172947" width={width || "500px"} height={height || "400px"}>
+      <svg width={width || "500px"} height={height || "400px"}>
+        { data && data.map(d => (
+          <Rectangle
+              stops={d.stops}
+              gId={d.gId}
+              id={d.id}
+              width={d.width}
+              x={d.x || 5}
+              y={d.y}
+            />
+        ))}
+      </svg>
+    </Box>
+
   );
 };
 
